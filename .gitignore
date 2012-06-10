@@ -1,0 +1,6 @@
+*.py[oc]
+*.project
+*.settings
+*.pydevproject
+*.log
+*.bat
