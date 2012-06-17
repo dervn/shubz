@@ -12,9 +12,9 @@ import tornado.web
 from tornado.web import HTTPError
 from tornado.options import options
 
-from lib.handler import BaseHandler
-from lib import validators
-from lib.util import ObjectDict
+from bz.lib.handler import BaseHandler
+from bz.lib import validators
+from bz.lib.util import ObjectDict
 
 class SigninHandler(BaseHandler):
     def head(self):

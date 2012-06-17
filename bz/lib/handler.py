@@ -6,9 +6,9 @@ from tornado.options import options
 from tornado import escape
 from jinja2 import TemplateNotFound
 
-from models.mixin import UserMixin
-from lib.filters import safe_markdown, xmldatetime, topiclink
-from lib.util import ObjectDict
+from bz.models.mixin import UserMixin
+from bz.lib.filters import safe_markdown, xmldatetime, topiclink
+from bz.lib.util import ObjectDict
 
 class BaseHandler(RequestHandler, UserMixin):
     _first_run = True

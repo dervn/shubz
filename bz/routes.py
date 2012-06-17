@@ -4,8 +4,8 @@
 import re
 import tornado.web
 
-from handlers import front, account
+from bz.handlers import front, account
 
-routes = [
+handlers = [
       (r"/", front.IndexHandler),
 ]

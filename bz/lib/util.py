@@ -2,6 +2,12 @@ import functools
 from tornado import ioloop, stack_context
 from tornado.options import define, options
 
+def reset_option(name, default=None, **kwargs):
+    if name in options:
+        options[name].set(default)
+        return
+    define(name, default, **kwargs)
+
 def parse_config_file(path):
     config = {}
     exec(compile(open(path).read(), path, 'exec'), config, config)

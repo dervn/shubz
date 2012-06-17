@@ -7,9 +7,9 @@ Created by dn on 2012/5/3.
 Copyright (c) 2012 shubz. All rights reserved.
 """
 
-from lib.decorators import cache
-from models import create_token
-from models import User
+from bz.lib.decorators import cache
+from bz.models import create_token
+from bz.models import User
 
 def get_cache_list(handler, model, id_list, key_prefix, time=600):
     if hasattr(handler, 'cache'):

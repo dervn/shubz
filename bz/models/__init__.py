@@ -14,7 +14,7 @@ from datetime import datetime
 from sqlalchemy import Column
 from sqlalchemy import Integer, String, DateTime, Text
 from tornado.options import options
-from data import db
+from bz.data import db
 
 def get_current_impact():
     return int(time.time())
