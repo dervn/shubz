@@ -55,9 +55,9 @@ class Application(web.Application):
 
         logging.info("load finished!")
 
-def main():
+def run_server():
 
-    parse_config_file(os.path.join(os.path.dirname(__file__), 'config.cfg'))
+    parse_config_file(os.path.join(os.path.dirname(__file__), 'setting.py'))
     tornado.options.parse_command_line()
 
     http_server = HTTPServer(Application(), xheaders=True)
@@ -66,5 +66,5 @@ def main():
 
     IOLoop.instance().start()
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
