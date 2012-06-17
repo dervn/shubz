@@ -64,9 +64,12 @@ class Application(tornado.web.Application):
 
         # load template
         from jinja2 import Environment, FileSystemLoader
-        template_path = options.template_path
-        self.env = Environment(loader=FileSystemLoader(template_path), extensions = [ 'jinja2.ext.i18n'])
-        self.env.filters = {}
+        self.env = Environment(loader=FileSystemLoader(options.template_path), extensions = [
+            'jinja2.ext.i18n',
+            'bz.lib.jinja2htmlcompress.HTMLCompress'])
+        #Custom Filters
+        self.env.filters = {
+        }
         self.env.install_null_translations(newstyle=True)
         self.env.globals['cfg'] = settings
 
@@ -76,7 +79,7 @@ class Application(tornado.web.Application):
 def run_server():
 
     from bz.lib.util import parse_config_file
-    parse_config_file(os.path.join(PROJDIR, 'setting.py'))
+    parse_config_file(os.path.join(ROOTDIR, 'setting.py'))
     tornado.options.parse_command_line()
 
     from tornado.httpserver import HTTPServer
